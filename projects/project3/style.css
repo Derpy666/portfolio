@@ -1,0 +1,131 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Varela Round", sans-serif;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #256df6 0%, #2cd390 100%);
+}
+
+.container {
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font: normal normal normal 160px/231px "Satisfy", cursive;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-shadow: 0px 0px 36px rgba(0, 0, 0, 0.53);
+  opacity: 1;
+}
+
+.subtitle {
+  text-align: center;
+  font: normal normal normal 32px/38px "Varela Round", sans-serif;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.description {
+  text-align: center;
+  font: normal normal normal 16px/20px "Varela Round", sans-serif;
+  letter-spacing: 0px;
+  color: #f9f9f9;
+  opacity: 1;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+label {
+  text-align: right;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #f9f9f9;
+}
+
+.input {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+  background: #f6f6f624 0% 0% no-repeat padding-box;
+  border: 2px solid #ffffff;
+  opacity: 1;
+}
+
+.btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: none;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  width: 206px;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 80px;
+    line-height: 110px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 200px;
+    font-size: 14px;
+  }
+}

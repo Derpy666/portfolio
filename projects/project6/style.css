@@ -1,0 +1,279 @@
+body {
+  font-family: "Heebo", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.top-line {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 434px;
+  height: 18px;
+  background-color: #fdbd03;
+}
+
+.bottom-line {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 1038px;
+  height: 18px;
+  background-color: #fdbd03;
+}
+
+.whatsapp-container {
+  position: absolute;
+  top: 63px;
+  left: 65px;
+}
+
+.whatsapp-bg {
+  width: 95px;
+  height: 95px;
+  background-color: #fdbd03;
+  border-radius: 50%;
+}
+
+.whatsapp-icon {
+  width: 54px;
+  height: 54px;
+  background: url(images/whatsapp_icon.png) no-repeat center;
+  background-size: cover;
+  margin-top: -73px;
+  margin-left: 20px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 200px);
+  padding: 100px;
+}
+
+.form-container {
+  flex: 1;
+  max-width: 50%;
+  text-align: right;
+}
+
+.form-title {
+  font-size: 66px;
+  font-weight: 900;
+  color: #fdbd03;
+}
+
+.form-desc {
+  font-size: 20px;
+  color: #020253;
+}
+
+.form {
+  margin-top: 30px;
+  direction: rtl;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c2c2c;
+  display: block;
+}
+
+.form-group {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px;
+  width: 45%;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #e5eeff;
+  border: none;
+  border-bottom: 4px solid #fdbd03;
+}
+
+.form-textarea {
+  height: 143px;
+}
+
+.submit-btn {
+  width: 166px;
+  height: 50px;
+  background-color: #fdbd03;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+}
+
+.phone-image {
+  flex: 1;
+  max-width: 50%;
+  height: 50%;
+  background: url(images/smartphone.png) no-repeat center;
+  background-size: contain;
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+  display: flex;
+  gap: 30px;
+}
+
+.icon {
+  width: 95px;
+  height: 95px;
+  background-color: #fdbd03;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px #00000029;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+}
+
+.facebook {
+  background-image: url(images/facebook_icon.png);
+}
+
+.instagram {
+  background-image: url(images/instagram_icon.png);
+}
+
+.linkedin {
+  background-image: url(images/in_icon.png);
+}
+
+.phone {
+  background-image: url(images/telephone_icon.png);
+}
+
+@media (max-width: 768px) {
+  .top-line {
+    top: 0;
+    height: 10px;
+    right: 0;
+    width: 100%;
+    background: #fdbd03;
+  }
+
+  .whatsapp-container {
+    display: none;
+  }
+
+  .phone-image {
+    position: absolute;
+    top: 5%;
+    width: 50%;
+    height: 119px;
+    background: transparent url(images/smartphone.png) no-repeat center;
+    background-size: 40%;
+  }
+
+  .form-container {
+    top: 50%;
+    width: 50000px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .form-title {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font: normal normal 900 40px/59px Heebo;
+    letter-spacing: 0px;
+    color: #fdbd03;
+    opacity: 1;
+  }
+
+  .form-desc {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    color: #020253;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: left;
+  }
+
+  .form-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: right;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 0 auto 10px;
+    background-color: #e5eeff;
+    border: none;
+    border-bottom: 4px solid #fdbd03;
+  }
+
+  .form-textarea {
+    height: 120px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    height: 50px;
+    bottom: 20%;
+    background-color: #fdbd03;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .social-icons {
+    position: relative;
+    bottom: 10%;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    background-color: #fdbd03;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px #00000029;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+  }
+
+  .bottom-line {
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    background: #fdbd03;
+  }
+}
