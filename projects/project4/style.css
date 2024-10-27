@@ -9,7 +9,7 @@ body {
 }
 
 .top-section {
-  background-image: url(images/image.png);
+  background-image: url(./images/image.png);
   background-size: cover;
   background-position: center;
   height: 400px;
