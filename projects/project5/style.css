@@ -143,6 +143,7 @@ hr {
   height: 3px;
   background-color: #0ee1da;
   margin-top: 0;
+  width: 100%;
 }
 
 button {
@@ -223,10 +224,6 @@ button:hover {
   }
   .img14 {
     grid-area: 13 / 2 / 14 / 3;
-  }
-
-  hr {
-    width: 100%;
   }
 
   input,
