@@ -33,6 +33,7 @@ body {
   color: #f9f9f9;
   opacity: 1;
   margin-top: 20px;
+  height: 80%;
 }
 
 .lower-section {
@@ -92,7 +93,7 @@ button {
   opacity: 1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .top-section h1 {
     font-size: 40px;
   }

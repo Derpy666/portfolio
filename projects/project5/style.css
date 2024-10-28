@@ -139,10 +139,10 @@ textarea::placeholder {
 }
 
 hr {
-  background: #0ee1da 0% 0% no-repeat padding-box;
-  opacity: 1;
-  width: 500px;
-  height: 5px;
+  border: none;
+  height: 3px;
+  background-color: #0ee1da;
+  margin-top: 0;
 }
 
 button {
@@ -226,7 +226,7 @@ button:hover {
   }
 
   hr {
-    width: 562px;
+    width: 100%;
   }
 
   input,

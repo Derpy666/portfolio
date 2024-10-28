@@ -53,7 +53,7 @@ body {
 
 .content-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: calc(100vh - 200px);
   padding: 100px;
@@ -131,7 +131,7 @@ body {
 .social-icons {
   position: absolute;
   bottom: 100px;
-  left: 50px;
+  left: 10%;
   display: flex;
   gap: 30px;
 }
@@ -179,7 +179,7 @@ body {
   .phone-image {
     position: absolute;
     top: 5%;
-    width: 50%;
+    width: 25%;
     height: 119px;
     background: transparent url(./images/smartphone.png) no-repeat center;
     background-size: 40%;
@@ -187,7 +187,7 @@ body {
 
   .form-container {
     top: 50%;
-    width: 50000px;
+    width: 100%;
     padding: 20px;
     text-align: center;
   }
@@ -253,8 +253,9 @@ body {
   }
 
   .social-icons {
-    position: relative;
+    position: sticky;
     bottom: 10%;
+    left: 0;
     justify-content: center;
     gap: 15px;
   }
