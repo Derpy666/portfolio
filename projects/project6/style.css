@@ -253,7 +253,7 @@ body {
   }
 
   .social-icons {
-    position: sticky;
+    position: relative;
     bottom: 10%;
     left: 0;
     justify-content: center;
