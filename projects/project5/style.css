@@ -121,7 +121,7 @@ label {
 
 input,
 textarea {
-  width: 500px;
+  width: 100%;
   padding: 10px;
   margin-top: 10px;
   background-color: #e5eeff;
@@ -133,17 +133,12 @@ textarea {
   resize: vertical;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #999;
-}
-
-hr {
+.input-line {
   border: none;
   height: 3px;
+  width: 100%;
   background-color: #0ee1da;
   margin-top: 0;
-  width: 100%;
 }
 
 button {
