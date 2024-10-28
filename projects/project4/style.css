@@ -20,14 +20,12 @@ body {
   color: #d3e10e;
   text-align: center;
 }
-
 .top-section h1 {
   font: normal normal bold 86px/113px Assistant;
   letter-spacing: 0px;
   opacity: 1;
 }
-
-.top-section p {
+.top-section .description {
   font: normal normal normal 20px/26px Assistant;
   letter-spacing: 0px;
   color: #f9f9f9;
@@ -41,26 +39,22 @@ body {
   padding: 20px;
   text-align: center;
 }
-
-form {
+.lower-section form {
   direction: rtl;
 }
-
-.form-group {
+.lower-section form .form-group {
   display: inline-block;
   margin: 0 10px;
   text-align: right;
 }
-
-label {
+.lower-section form .form-group label {
   display: block;
   font: normal normal bold 16px/21px Assistant;
   letter-spacing: 0px;
   color: #011560;
   opacity: 1;
 }
-
-input {
+.lower-section form .form-group input {
   background: #f6f6f6;
   padding: 10px;
   border: none;
@@ -68,15 +62,13 @@ input {
   margin-top: 5px;
   width: 418px;
 }
-
-.input-line {
+.lower-section form .form-group .input-line {
   border: none;
   height: 3px;
   background-color: #d3e10e;
   margin-top: 0;
 }
-
-button {
+.lower-section form button {
   background: #d3e10e;
   border: none;
   border-radius: 4px;
@@ -97,21 +89,17 @@ button {
   .top-section h1 {
     font-size: 40px;
   }
-
-  .top-section p {
+  .top-section .description {
     font-size: 16px;
   }
-
-  .form-group {
+  .lower-section .form-group {
     display: block;
     margin: 10px 0;
   }
-
-  input {
+  .lower-section input {
     width: 100%;
   }
-
-  button {
+  .lower-section button {
     width: 100%;
   }
-}
+}/*# sourceMappingURL=style.css.map */
