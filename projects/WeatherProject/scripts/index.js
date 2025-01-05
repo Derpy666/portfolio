@@ -41,7 +41,7 @@ async function getWeather(city) {
             descElement.textContent = `${description} :מצב העננים`;
 
             const humidityElement = document.createElement('p');
-            humidityElement.textContent = `${humidity}% :לחות`;
+            humidityElement.textContent = `${humidity}% :לכות`;
 
             const windElement = document.createElement('p');
             windElement.textContent = `מהירות הרוח: ${windSpeed} קמ"ש`;
