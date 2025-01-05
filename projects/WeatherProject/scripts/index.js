@@ -1,13 +1,7 @@
-import { weatherConditionTranslations } from "./translations.js"
-
 const button = document.getElementById('getWeather');
 const cityInput = document.getElementById('city');
 const weatherInfo = document.getElementById('weatherInfo');
 const error = document.getElementById('error');
-
-function translateWeatherCondition(condition) {
-    return weatherConditionTranslations[condition] || "לא ידוע";
-}
 
 button.addEventListener('click', () => {
     const city = cityInput.value;
@@ -44,7 +38,7 @@ async function getWeather(city) {
             tempElement.textContent = `${temperature}°C :טמפרטורה`;
 
             const descElement = document.createElement('p');
-            descElement.textContent = `מצב העננים: ${translateWeatherCondition(description)}`;
+            descElement.textContent = `${description} :מצב העננים`;
 
             const humidityElement = document.createElement('p');
             humidityElement.textContent = `${humidity}% :לחות`;
