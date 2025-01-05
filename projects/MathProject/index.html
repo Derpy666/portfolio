@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>משחק מתמטיקה</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./scripts/index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="game-title">משחק מתמטיקה</h1>
+
+      <div id="start-screen">
+        <p>שיא הניקוד שלך: <span id="high-score">0</span></p>
+        <select id="difficulty">
+          <option value="easy">קל</option>
+          <option value="normal">רגיל</option>
+          <option value="hard">קשה</option>
+        </select>
+        <label for="difficulty">:בחר רמת קושי</label>
+        <button onclick="startGame()">התחל</button>
+      </div>
+
+      <div id="question-container">
+        <h2 id="question-title">שאלה 1 מתוך 10</h2>
+        <p id="question"></p>
+        <input type="number" id="answer" placeholder="רשום את התשובה שלך" />
+        <button onclick="submitAnswer()">שאלה הבאה</button>
+      </div>
+
+      <div id="end-screen">
+        <h2>המשחק נגמר</h2>
+        <p>!הניקוד שלך: <span id="final-score"></span> מתוך 10 נקודות</p>
+        <p>שיא הניקוד שלך: <span id="final-high-score">0</span></p>
+        <table id="score-table">
+          <thead>
+            <tr>
+              <th>מס' שאלה</th>
+              <th>שאלה</th>
+              <th>תשובה שלך</th>
+              <th>תשובה נכונה</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button onclick="restartGame()">שחק שוב</button>
+      </div>
+    </div>
+  </body>
+</html>
