@@ -46,7 +46,9 @@ const weatherConditionTranslations = {
     "Patchy light rain with thunder": "גשם קל עם רעמים חלקיים",
     "Moderate or heavy rain with thunder": "גשם בינוני או כבד עם רעמים",
     "Patchy light snow with thunder": "שלג קל עם רעמים חלקיים",
-    "Moderate or heavy snow with thunder": "שלג בינוני או כבד עם רעמים"
-} 
+    "Moderate or heavy snow with thunder": "שלג בינוני או כבד עם רעמים",
+    "Clear": "בהיר"
+  }
+  
 
 export { weatherConditionTranslations }
