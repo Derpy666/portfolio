@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.difficulty {
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.card {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    color: transparent;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.card.flipped {
+    background-color: #fff;
+    color: #333;
+    cursor: default;
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    background-color: #8bc34a;
+    color: white;
+    cursor: default;
+}
+
+#message {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#restart {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#restart:hover {
+    background-color: #1976d2;
+}
+
+#difficulty {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    font-weight: bold;
+    color: inherit;
+}
+
+#difficulty option[value="easy"] {
+    color: green;
+    font-weight: bold;
+}
+
+#difficulty option[value="normal"] {
+    color: orange;
+    font-weight: bold;
+}
+
+#difficulty option[value="hard"] {
+    color: red;
+    font-weight: bold;
+}
+
+#difficulty:focus option:checked,
+#difficulty option:checked {
+    background-color: #f0f0f0;
+    color: inherit;
+    font-weight: bold;
+}
