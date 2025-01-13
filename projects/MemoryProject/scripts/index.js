@@ -138,7 +138,7 @@ function endGame() {
     !לקח לך ${elapsedTime.toFixed(2)} שניות
     `
 
-    if (elapsedTime < highScore || highScore == 0) {
+    if (highScore == 0 || elapsedTime < highScore) {
         localStorage.setItem(highScoreKey, elapsedTime);
         msg += `
         <br>
