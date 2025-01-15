@@ -1,0 +1,180 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  direction: rtl;
+}
+
+h1 {
+  color: #333;
+}
+
+#category-selection {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#category-selection p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#category-menu {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+#category-menu:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+#start-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#start-button:hover {
+  background-color: #388e3c;
+}
+
+#game-content {
+  margin-top: 20px;
+  display: block;
+}
+
+button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+#restart-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+}
+
+#restart-button:hover {
+  background-color: #d32f2f;
+}
+
+#word {
+  font-size: 24px;
+  letter-spacing: 10px;
+  margin: 20px 0;
+}
+
+#message {
+  font-size: 18px;
+  color: #666;
+}
+
+#letter-keyboard {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  justify-content: center;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.letter-button {
+  padding: 10px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  /* Make buttons expand to fill available space */
+}
+
+.letter-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Media queries for mobile responsiveness */
+@media screen and (max-width: 600px) {
+  #letter-keyboard {
+    grid-template-columns: repeat(5, 1fr);
+    /* Fewer columns on small screens */
+    gap: 8px;
+    max-width: 100%;
+    /* Full width for small screens */
+  }
+
+  .letter-button {
+    font-size: 16px;
+    /* Slightly smaller text on mobile */
+    padding: 12px;
+    /* Increase button size on smaller screens */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #letter-keyboard {
+    grid-template-columns: repeat(4, 1fr);
+    /* Even fewer columns on very small screens */
+    gap: 6px;
+  }
+
+  .letter-button {
+    font-size: 14px;
+    /* Smaller text size for very small screens */
+    padding: 14px;
+    /* Larger buttons for touch targets */
+  }
+}
+
+.hangman-container {
+  margin: 20px 0;
+}
+
+#hangman-image {
+  width: 200px;
+  height: auto;
+}
+
+#restart-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+}
+
+#restart-button:hover {
+  background-color: #d32f2f;
+}

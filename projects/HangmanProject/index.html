@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>איש תלוי</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./scripts/index.js" defer></script>
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>איש תלוי</h1>
+
+        <div id="game-content">
+            <div id="category-selection">
+                <p>קטגוריה:</p>
+                <select id="category-menu">
+                    <option value="foods">מאכלים</option>
+                    <option value="animals">חיות</option>
+                    <option value="furnitures">ריהוט</option>
+                    <option value="games">משחקים</option>
+                </select>
+            </div>
+
+            <p id="word">_ _ _ _ _</p>
+            <p id="message">נחש את המילה!</p>
+            <div class="letters" id="letter-keyboard"></div>
+            <div class="hangman-container">
+                <img id="hangman-image" src="./images/hangman6.png" alt="Hangman Image">
+            </div>
+            <button id="restart-button">התחל מחדש</button>
+        </div>
+    </div>
+</body>
+
+</html>
