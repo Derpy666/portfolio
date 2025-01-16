@@ -86,12 +86,12 @@ function checkMatch() {
         if (matchedPairs === document.querySelectorAll(".card").length / 2) {
             endGame();
         } else {
-            message.textContent = "!התאמה נמצאה";
+            message.textContent = "התאמה נמצאה!";
         }
 
         resetSelection();
     } else {
-        message.textContent = "!אין התאמה, אנא נסה שוב";
+        message.textContent = "אין התאמה, אנא נסה שוב!";
         setTimeout(() => {
             firstCard.classList.remove("flipped");
             secondCard.classList.remove("flipped");
@@ -117,13 +117,13 @@ function resetGame() {
     timerDisplay.textContent = "";
     clearInterval(timerInterval);
     elapsedTime = 0
-    message.textContent = "!לחץ על קלף בשביל להתחיל";
+    message.textContent = "לחץ על קלף בשביל להתחיל!";
 }
 
 function updateTimer() {
     if (startTime) {
         elapsedTime = (Date.now() - startTime) / 1000;
-        timerDisplay.textContent = `${elapsedTime.toFixed(2)}s`;
+        timerDisplay.textContent = `${elapsedTime.toFixed(2)} שניות`;
     }
 }
 
@@ -133,21 +133,21 @@ function endGame() {
     const highScore = parseFloat(localStorage.getItem(highScoreKey)) || 0;
 
     let msg = `
-    !אתה ניצחת
+    אתה ניצחת!
     <br>
-    !לקח לך ${elapsedTime.toFixed(2)} שניות
+    לקח לך ${elapsedTime.toFixed(2)} שניות!
     `
 
     if (highScore == 0 || elapsedTime < highScore) {
         localStorage.setItem(highScoreKey, elapsedTime);
         msg += `
         <br>
-        !הושג שיא חדש
+        הושג שיא חדש!
         `
     } else {
         msg += `
         <br>
-        !השיא שלך הוא: ${highScore.toFixed(2)} שניות
+        השיא שלך הוא: ${highScore.toFixed(2)} שניות!
         `
     }
         

@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="./scripts/index.js" defer></script>
   </head>
-  <body>
+  <body dir="rtl">
     <div class="container">
       <h1 id="game-title">משחק מתמטיקה</h1>
 
       <div id="start-screen">
         <p>שיא הניקוד שלך: <span id="high-score">0</span></p>
+        <label for="difficulty">בחר רמת קושי:</label>
         <select id="difficulty">
           <option value="easy">קל</option>
           <option value="normal">רגיל</option>
           <option value="hard">קשה</option>
         </select>
-        <label for="difficulty">:בחר רמת קושי</label>
         <button onclick="startGame()">התחל</button>
       </div>
 

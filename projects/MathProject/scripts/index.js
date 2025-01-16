@@ -37,7 +37,7 @@ function showQuestion() {
   if (currentQuestionIndex < 10) {
     const currentQuestion = questions[currentQuestionIndex];
     questionTitle.innerText = `שאלה ${currentQuestionIndex + 1} מתוך 10`;
-    questionElement.innerText = `${currentQuestion.question} = `;
+    questionElement.innerText = `= ${currentQuestion.question}`;
     answerInput.value = "";
   } else {
     endGame();

@@ -35,13 +35,13 @@ async function getWeather(city) {
             cityElement.textContent = city;
 
             const tempElement = document.createElement('p');
-            tempElement.textContent = `${temperature}°C :טמפרטורה`;
+            tempElement.textContent = `טמפרטורה: ${temperature}°C`;
 
             const descElement = document.createElement('p');
-            descElement.textContent = `${description} :מצב העננים`;
+            descElement.textContent = `מצב העננים: ${description}`;
 
             const humidityElement = document.createElement('p');
-            humidityElement.textContent = `${humidity}% :לכות`;
+            humidityElement.textContent = `לכות: ${humidity}%`;
 
             const windElement = document.createElement('p');
             windElement.textContent = `מהירות הרוח: ${windSpeed} קמ"ש`;
