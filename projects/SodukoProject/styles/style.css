@@ -2,7 +2,6 @@
     box-sizing: border-box;
   }
   
-  /* General Styles */
   body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
@@ -15,7 +14,6 @@
     justify-content: center;
   }
   
-  /* Game Container */
   .game-container {
     margin: 20px auto;
     padding: 20px;
@@ -26,7 +24,7 @@
     overflow: hidden;
   }
   
-  /* Title and Timer */
+
   h1 {
     font-size: 2.5rem;
     margin: 20px 0;
@@ -39,7 +37,6 @@
     margin-bottom: 20px;
   }
   
-  /* Sudoku Board */
   .board {
     display: grid;
     grid-template-columns: repeat(9, 40px);
@@ -74,7 +71,6 @@
     cursor: not-allowed;
   }
   
-  /* Buttons */
   .button-container {
     display: flex;
     justify-content: center;
@@ -102,7 +98,6 @@
     transform: scale(0.95);
   }
   
-  /* Responsive Design */
   @media (max-width: 600px) {
     body {
       padding: 10px;
@@ -124,17 +119,17 @@
     }
   
     .board {
-      grid-template-columns: repeat(9, 35px); /* Adjust square size */
+      grid-template-columns: repeat(9, 35px);
       grid-template-rows: repeat(9, 35px);
-      gap: 1px; /* Reduce gap for better fit */
-      width: 315px; /* Updated width */
-      height: 315px; /* Updated height */
+      gap: 1px;
+      width: 315px;
+      height: 315px;
     }
   
     .cell {
       width: 35px;
       height: 35px;
-      font-size: 1rem; /* Slightly smaller font */
+      font-size: 1rem;
     }
   
     .button-container {
