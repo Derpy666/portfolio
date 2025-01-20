@@ -2,117 +2,72 @@ import { data } from "./sodukoCards.js";
 
 const boardElement = document.getElementById("sudoku-board");
 const timerElement = document.getElementById("timer");
-const validateButton = document.getElementById("validate");
 const restartButton = document.getElementById("restart");
 const difficultySelect = document.getElementById("difficulty");
 const message = document.getElementById("message");
 
 let timerInterval;
 let secondsElapsed = 0;
+let solution = [];
 
-const difficulty = difficultySelect.value
-
-
-
-function createBoard(puzzle) {
+function createBoard(puzzle, solvedPuzzle) {
   boardElement.innerHTML = "";
+  solution = solvedPuzzle;
+
   puzzle.forEach((row, rowIndex) => {
     row.forEach((value, colIndex) => {
-        const cell = document.createElement("input");
-        cell.type = "text";
+      const cell = document.createElement("input");
+      cell.type = "text";
+      cell.dataset.row = rowIndex;
+      cell.dataset.col = colIndex;
 
-        cell.addEventListener("input", (event) => {
-            const value = cell.value;
-            if(isNaN(value)) {
-                cell.value = ""
-            }
+      cell.addEventListener("input", (event) => handleCellInput(event, rowIndex, colIndex));
 
-            if(parseInt(value) < 1) {
-                cell.value = ""
-            }
-
-            if(parseInt(value) > 9) {
-                cell.value = ""
-            }
-            
-            if(value.length > 1) {
-                cell.value = ""
-            }
-        });
-
-        cell.classList.add("cell");
-        if (value) {
-          cell.value = value;
-          cell.classList.add("read-only");
-          cell.disabled = true;
-        }
-        boardElement.appendChild(cell);
+      cell.classList.add("cell");
+      if (value) {
+        cell.value = value;
+        cell.classList.add("read-only");
+        cell.disabled = true;
+      }
+      boardElement.appendChild(cell);
     });
   });
 }
 
-function validateBoard() {
-    const cells = document.querySelectorAll(".cell");
-    const userBoard = Array.from({ length: 9 }, () => Array(9).fill(0));
-    let isComplete = true;
-  
-    cells.forEach((cell, index) => {
-      const rowIndex = Math.floor(index / 9); 
-      const colIndex = index % 9; 
-  
-      const value = parseInt(cell.value, 10);
-      if (value && value >= 1 && value <= 9) {
-        userBoard[rowIndex][colIndex] = value;
-      } else {
-        isComplete = false;
-      }
-    });
-  
-    if (!isComplete) {
-      message.innerText = "הלוח לא מלא, אנא מלא אותו קודם";
-      return;
-    }
-  
-    if (isBoardValid(userBoard)) {
-      message.innerText = `כל הכבוד, פתרת את הסודוקו במשך: ${formatTime(secondsElapsed)}`;
-      clearInterval(timerInterval);
-    } else {
-      message.innerText = "הפיתרון לא טוב, אמשך לנסות!";
-    }
+function handleCellInput(event, row, col) {
+  const cell = event.target;
+  const value = cell.value.trim();
+
+  cell.removeAttribute("correct");
+  cell.style.color = "";
+
+  if (isNaN(value) || value < 1 || value > 9 || value.length > 1) {
+    cell.value = "";
+    return;
   }
 
-function isBoardValid(board) {
-  for (let i = 0; i < 9; i++) {
-    const rowSet = new Set();
-    const colSet = new Set();
-    for (let j = 0; j < 9; j++) {
-      if (board[i][j]) {
-        if (rowSet.has(board[i][j])) return false;
-        rowSet.add(board[i][j]);
-      }
-      if (board[j][i]) {
-        if (colSet.has(board[j][i])) return false;
-        colSet.add(board[j][i]);
-      }
-    }
-  }
+  const typedValue = parseInt(value, 10);
 
-  for (let row = 0; row < 9; row += 3) {
-    for (let col = 0; col < 9; col += 3) {
-      const gridSet = new Set();
-      for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 3; j++) {
-          const value = board[row + i][col + j];
-          if (value) {
-            if (gridSet.has(value)) return false;
-            gridSet.add(value);
-          }
-        }
-      }
-    }
+  if (typedValue === solution[row][col]) {
+    cell.setAttribute("correct", "true");
+    cell.style.color = "lime";
+    checkForWinner();
+  } else {
+    cell.setAttribute("correct", "false");
+    cell.style.color = "red";
   }
+}
 
-  return true;
+function checkForWinner() {
+  const cells = document.querySelectorAll(".cell");
+  const allCorrect = Array.from(cells).every(
+    (cell) => cell.getAttribute("correct") === "true" || cell.disabled
+  );
+
+  if (allCorrect) {
+    message.innerText = `כל הכבוד, פתרת את הסודוקו במשך: ${formatTime(secondsElapsed)}`;
+    clearInterval(timerInterval);
+  }
 }
 
 function formatTime(seconds) {
@@ -132,23 +87,19 @@ function startTimer() {
 }
 
 function startGame() {
-    let rndNum = Math.ceil(Math.random() * data[difficulty].length) - 1;
-    console.log(rndNum)
-    console.log(difficulty)
-    console.log(data[difficulty][rndNum])
-    createBoard(data[difficulty][rndNum]);
-    startTimer();
+  const difficulty = difficultySelect.value;
+  const puzzles = data[difficulty];
+  const rndNum = Math.floor(Math.random() * puzzles.length);
+  const { value, solution: solvedPuzzle } = puzzles[rndNum];
+  createBoard(value, solvedPuzzle);
+  startTimer();
 }
-
-window.addEventListener("keypress", function() {
-    message.innerText = ""
-})
 
 restartButton.addEventListener("click", startGame);
 
-validateButton.addEventListener("click", validateBoard);
-
 difficultySelect.addEventListener("change", startGame);
+difficultySelect.dispatchEvent(new Event("change"));
+
 
 document.getElementById("difficulty").addEventListener("change", function () {
     const difficulty = this.value;

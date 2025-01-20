@@ -46,6 +46,7 @@
     width: 360px;
     height: 360px;
     background-color: transparent;
+    direction: rtl;
   }
   
   .cell {
@@ -56,7 +57,32 @@
     font-size: 1.2rem;
     border: 1px solid #ccc;
     outline: none;
+    font-weight: bold;
     transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .cell:nth-child(3n) {
+    border-left: 3px solid black;
+  }
+
+  .cell:nth-child(1), .cell:nth-child(10), .cell:nth-child(19), .cell:nth-child(28), .cell:nth-child(37), .cell:nth-child(46), .cell:nth-child(55), .cell:nth-child(64), .cell:nth-child(73) {
+    border-right: 3px solid black;
+  }
+  
+  .cell:nth-child(n + 1):nth-child(-n + 9), .cell:nth-child(n + 28):nth-child(-n + 36), .cell:nth-child(n + 55):nth-child(-n + 63) {
+    border-top: 3px solid black;
+  }
+
+  .cell:nth-child(n + 73):nth-child(-n + 81) {
+    border-bottom: 3px solid black;
+  }
+
+  .cell[correct=true] {
+    color: lime
+  }
+
+  .cell[correct=false] {
+    color: red
   }
   
   .cell:focus {
@@ -66,7 +92,7 @@
   
   .cell.read-only {
     background-color: #f5f5f5;
-    color: #888;
+    color: #000000;
     font-weight: bold;
     cursor: not-allowed;
   }
