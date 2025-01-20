@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>משחק סודוקו</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+  <script src="./scripts/index.js" defer type="module"></script>
+</head>
+<body dir="rtl">
+  <div class="game-container">
+    <h1>משחק סודוקו</h1>
+    <div class="difficulty">
+        <label for="difficulty">בחר רמת קושי:</label>
+        <select id="difficulty">
+            <option value="easy">קל</option>
+            <option value="normal">רגיל</option>
+            <option value="hard">קשה</option>
+        </select>
+    </div>
+    <p id="message"></p>
+    <p id="timer">משך זמן: 0:00</p>
+    <div id="sudoku-board" class="board"></div>
+    <button id="validate">בדיקה</button>
+    <button id="restart">התחל מחדש</button>
+  </div>
+</body>
+</html>

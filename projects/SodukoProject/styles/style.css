@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* General Styles */
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #eef2f3;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Game Container */
+  .game-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  /* Title and Timer */
+  h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #333;
+  }
+  
+  #timer {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Sudoku Board */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(9, 40px);
+    gap: 2px;
+    margin: 20px auto;
+    width: 360px;
+    height: 360px;
+    background-color: transparent;
+  }
+  
+  .cell {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .cell:focus {
+    background-color: #e0f7fa;
+    border-color: #00796b;
+  }
+  
+  .cell.read-only {
+    background-color: #f5f5f5;
+    color: #888;
+    font-weight: bold;
+    cursor: not-allowed;
+  }
+  
+  /* Buttons */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #004d40;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+      justify-content: flex-start;
+    }
+  
+    .game-container {
+      margin: 20px auto;
+      padding: 15px;
+      max-width: 90%;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    #timer {
+      font-size: 1rem;
+    }
+  
+    .board {
+      grid-template-columns: repeat(9, 35px); /* Adjust square size */
+      grid-template-rows: repeat(9, 35px);
+      gap: 1px; /* Reduce gap for better fit */
+      width: 315px; /* Updated width */
+      height: 315px; /* Updated height */
+    }
+  
+    .cell {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem; /* Slightly smaller font */
+    }
+  
+    .button-container {
+      margin-top: 15px;
+    }
+  
+    button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+  }
+
+  #difficulty {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    font-weight: bold;
+    color: inherit;
+}
+
+#difficulty option[value="easy"] {
+    color: green;
+    font-weight: bold;
+}
+
+#difficulty option[value="normal"] {
+    color: orange;
+    font-weight: bold;
+}
+
+#difficulty option[value="hard"] {
+    color: red;
+    font-weight: bold;
+}
+
+#difficulty:focus option:checked,
+#difficulty option:checked {
+    background-color: #f0f0f0;
+    color: inherit;
+    font-weight: bold;
+}
+  
