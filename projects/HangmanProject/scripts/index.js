@@ -21,7 +21,6 @@ const gameContent = document.getElementById("game-content");
 const categorySelection = document.getElementById("category-selection");
 const startButton = document.getElementById("start-button");
 
-// Mapping regular letters to their final forms
 const finalLettersMap = {
     "נ": "ן",
     "כ": "ך",
@@ -30,12 +29,10 @@ const finalLettersMap = {
     "צ": "ץ"
 };
 
-// Normalize a letter to its final form if it exists
 function normalizeLetter(letter) {
     return finalLettersMap[letter] || letter;
 }
 
-// Normalize the entire word to handle both regular and final letters
 function normalizeWord(word) {
     return word.split("").map(normalizeLetter).join("");
 }
@@ -82,7 +79,6 @@ function createKeyboard() {
 }
 
 function handleGuess(guess, button) {
-    // Normalize the guessed letter
     const normalizedGuess = normalizeLetter(guess);
 
     if (usedLetters.includes(normalizedGuess)) return;
@@ -90,12 +86,10 @@ function handleGuess(guess, button) {
     usedLetters.push(normalizedGuess);
     button.disabled = true;
 
-    // Normalize the selected word for comparison
     const normalizedSelectedWord = normalizeWord(selectedWord);
 
     if (normalizedSelectedWord.includes(normalizedGuess)) {
         selectedWord.split("").forEach((char, index) => {
-            // Check if the normalized version of the word matches the guessed letter
             if (normalizeLetter(char) === normalizedGuess) {
                 guessedWord[index] = char;
             }
