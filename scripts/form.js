@@ -1,7 +1,7 @@
 const formContact = document.getElementById('contact');
 const modal = new bootstrap.Modal(document.getElementById('successModal'));
 
-formContact.addEventListener('submit', function (event) {
+const formEvent = formContact.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const form = event.target;
@@ -11,4 +11,6 @@ formContact.addEventListener('submit', function (event) {
     } else {
       form.reportValidity();
     }
-  });
+  });  
+
+export { formEvent }
