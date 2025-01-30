@@ -37,7 +37,7 @@ function showQuestion() {
   if (currentQuestionIndex < 10) {
     const currentQuestion = questions[currentQuestionIndex];
     questionTitle.innerText = `שאלה ${currentQuestionIndex + 1} מתוך 10`;
-    questionElement.innerText = `= ${currentQuestion.question}`;
+    questionElement.innerText = `${currentQuestion.question}`;
     answerInput.value = "";
   } else {
     endGame();
@@ -86,7 +86,7 @@ function endGame() {
 
     row.innerHTML = `
       <td>${answer.questionNumber}</td>
-      <td>${answer.question}</td>
+      <td dir="ltr">${answer.question}</td>
       <td>${answer.userAnswer}</td>
       <td>${answer.correctAnswer}</td>
     `;
@@ -119,21 +119,26 @@ function generateQuestions() {
   const max = maxValues[difficulty];
 
   for (let i = 0; i < 10; i++) {
-    const rndNum1 = Math.ceil(Math.random() * max);
-    const rndNum2 = Math.ceil(Math.random() * max);
-    const operator = operators[Math.floor(Math.random() * operators.length)];
+    let rndNum1 = Math.ceil(Math.random() * max);
+    let rndNum2 = Math.ceil(Math.random() * max);
+    let operator = operators[Math.floor(Math.random() * operators.length)];
     let question, answer;
 
     if (operator === "/") {
-      const dividend = rndNum1 * rndNum2;
+      answer = Math.ceil(Math.random() * max);
+      rndNum2 = Math.ceil(Math.random() * (max / 2)) || 1;
+      let dividend = answer * rndNum2;
       question = `${dividend} / ${rndNum2}`;
-      answer = dividend / rndNum2;
+    } else if (operator === "-") {
+      if (rndNum1 < rndNum2) [rndNum1, rndNum2] = [rndNum2, rndNum1];
+      question = `${rndNum1} - ${rndNum2}`;
+      answer = rndNum1 - rndNum2;
     } else {
       question = `${rndNum1} ${operator} ${rndNum2}`;
       answer = eval(question);
     }
 
-    questions.push({ question, answer: parseFloat(answer.toFixed(2)) });
+    questions.push({ question, answer });
   }
 }
 
