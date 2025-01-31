@@ -12,7 +12,7 @@ const dom = projects.forEach((project) => {
   
     const img = document.createElement("img");
     img.src = `./images/${project.name}.png`;
-    img.alt = project.title;
+    img.alt = project.name;
     img.classList.add("card-img-top");
     cardDiv.appendChild(img);
   
