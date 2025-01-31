@@ -47,7 +47,7 @@ function startNewGame() {
     guessedWord = Array(selectedWord.length).fill("_");
     lives = 6;
     usedLetters = [];
-    messageElement.textContent = "נחש את המילה!";
+    messageElement.innerText = "נחש את המילה!";
     createKeyboard();
     updateDisplay();
     gameContent.style.display = "block";
@@ -70,7 +70,7 @@ function createKeyboard() {
     ];
     hebrewLetters.forEach((letter) => {
         const button = document.createElement("button");
-        button.textContent = letter;
+        button.innerText = letter;
         button.className = "letter-button";
         button.disabled = usedLetters.includes(letter);
         button.addEventListener("click", () => handleGuess(letter, button));
@@ -94,19 +94,19 @@ function handleGuess(guess, button) {
                 guessedWord[index] = char;
             }
         });
-        messageElement.textContent = "ניחוש טוב!";
+        messageElement.innerText = "ניחוש טוב!";
     } else {
         lives--;
-        messageElement.textContent = "ניחוש לא טוב!";
+        messageElement.innerText = "ניחוש לא טוב!";
     }
 
     updateDisplay();
 
     if (lives <= 0) {
-        messageElement.textContent = `המשחק נגמר! המילה הייתה: ${selectedWord}`;
+        messageElement.innerText = `המשחק נגמר! המילה הייתה: ${selectedWord}`;
         disableKeyboard();
     } else if (!guessedWord.includes("_")) {
-        messageElement.textContent = "כל הכבוד! ניחשת את המילה!";
+        messageElement.innerText = "כל הכבוד! ניחשת את המילה!";
         disableKeyboard();
     }
 }
@@ -120,7 +120,7 @@ function restartGame() {
     guessedWord = selectedWord.split("").map(char => char === " " ? " " : "_");
     lives = 6;
     usedLetters = [];
-    messageElement.textContent = "נחש את המילה!";
+    messageElement.innerText = "נחש את המילה!";
     createKeyboard();
     updateDisplay();
 

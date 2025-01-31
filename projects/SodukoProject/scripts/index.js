@@ -78,11 +78,11 @@ function formatTime(seconds) {
 
 function startTimer() {
   secondsElapsed = 0;
-  timerElement.textContent = "משך זמן: 0:00";
+  timerElement.innerText = "משך זמן: 0:00";
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
     secondsElapsed++;
-    timerElement.textContent = `משך זמן: ${formatTime(secondsElapsed)}`;
+    timerElement.innerText = `משך זמן: ${formatTime(secondsElapsed)}`;
   }, 1000);
 }
 

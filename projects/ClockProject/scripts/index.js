@@ -28,11 +28,11 @@ function createClock(city) {
 
     const cityName = document.createElement("div");
     cityName.className = "city";
-    cityName.textContent = city.name;
+    cityName.innerText = city.name;
 
     const time = document.createElement("div");
     time.className = "time";
-    time.textContent = getTime(city.timezone);
+    time.innerText = getTime(city.timezone);
 
     clock.appendChild(cityName);
     clock.appendChild(time);
@@ -50,6 +50,6 @@ const clocks = cities.map(createClock);
 
 setInterval(() => {
     clocks.forEach((clock, index) => {
-        clock.textContent = getTime(cities[index].timezone);
+        clock.innerText = getTime(cities[index].timezone);
     });
 }, 1000);

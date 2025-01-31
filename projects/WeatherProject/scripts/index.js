@@ -8,7 +8,7 @@ button.addEventListener('click', () => {
     if (city) {
         getWeather(city);
     } else {
-        error.textContent = "תרשום שם של עיר";
+        error.innerText = "תרשום שם של עיר";
     }
 });
 
@@ -21,7 +21,7 @@ async function getWeather(city) {
         const data = await response.json();
 
         if (data.error) {
-            error.textContent = "העיר לא נמצאה, אנא נסה שוב";
+            error.innerText = "העיר לא נמצאה, אנא נסה שוב";
             weatherInfo.innerHTML = '';
         } else {
             const temperature = data.current.temp_c;
@@ -32,19 +32,19 @@ async function getWeather(city) {
             weatherInfo.innerHTML = '';
 
             const cityElement = document.createElement('h2');
-            cityElement.textContent = city;
+            cityElement.innerText = city;
 
             const tempElement = document.createElement('p');
-            tempElement.textContent = `טמפרטורה: ${temperature}°C`;
+            tempElement.innerText = `טמפרטורה: ${temperature}°C`;
 
             const descElement = document.createElement('p');
-            descElement.textContent = `מצב העננים: ${description}`;
+            descElement.innerText = `מצב העננים: ${description}`;
 
             const humidityElement = document.createElement('p');
-            humidityElement.textContent = `לכות: ${humidity}%`;
+            humidityElement.innerText = `לכות: ${humidity}%`;
 
             const windElement = document.createElement('p');
-            windElement.textContent = `מהירות הרוח: ${windSpeed} קמ"ש`;
+            windElement.innerText = `מהירות הרוח: ${windSpeed} קמ"ש`;
 
             const weatherImage = document.createElement('img');
             weatherImage.src = `https:${data.current.condition.icon}`;
@@ -58,10 +58,10 @@ async function getWeather(city) {
             weatherInfo.appendChild(windElement);
             weatherInfo.appendChild(weatherImage);
 
-            error.textContent = '';
+            error.innerText = '';
         }
     } catch (err) {
-        error.textContent = "בעיה באתר, אנא נסו שוב מאוחר יותר";
+        error.innerText = "בעיה באתר, אנא נסו שוב מאוחר יותר";
         console.error("An error occurred. Please try again later.", err)
         weatherInfo.innerHTML = '';
     }

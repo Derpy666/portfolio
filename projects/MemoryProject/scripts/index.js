@@ -62,7 +62,7 @@ function flipCard() {
     }
 
     card.classList.add("flipped");
-    card.textContent = card.getAttribute("data-value");
+    card.innerText = card.getAttribute("data-value");
 
     if (!firstCard) {
         firstCard = card;
@@ -86,17 +86,17 @@ function checkMatch() {
         if (matchedPairs === document.querySelectorAll(".card").length / 2) {
             endGame();
         } else {
-            message.textContent = "התאמה נמצאה!";
+            message.innerText = "התאמה נמצאה!";
         }
 
         resetSelection();
     } else {
-        message.textContent = "אין התאמה, אנא נסה שוב!";
+        message.innerText = "אין התאמה, אנא נסה שוב!";
         setTimeout(() => {
             firstCard.classList.remove("flipped");
             secondCard.classList.remove("flipped");
-            firstCard.textContent = "";
-            secondCard.textContent = "";
+            firstCard.innerText = "";
+            secondCard.innerText = "";
             resetSelection();
         }, 1000);
     }
@@ -114,16 +114,16 @@ function resetGame() {
     isChecking = false;
     matchedPairs = 0;
     startTime = null;
-    timerDisplay.textContent = "";
+    timerDisplay.innerText = "";
     clearInterval(timerInterval);
     elapsedTime = 0
-    message.textContent = "לחץ על קלף בשביל להתחיל!";
+    message.innerText = "לחץ על קלף בשביל להתחיל!";
 }
 
 function updateTimer() {
     if (startTime) {
         elapsedTime = (Date.now() - startTime) / 1000;
-        timerDisplay.textContent = `${elapsedTime.toFixed(2)} שניות`;
+        timerDisplay.innerText = `${elapsedTime.toFixed(2)} שניות`;
     }
 }
 

@@ -21,11 +21,11 @@ const dom = projects.forEach((project) => {
   
     const cardTitle = document.createElement("h5");
     cardTitle.classList.add("card-title");
-    cardTitle.textContent = project.title;
+    cardTitle.innerText = project.title;
   
     const cardText = document.createElement("p");
     cardText.classList.add("card-text");
-    cardText.textContent = project.description;
+    cardText.innerText = project.description;
   
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
@@ -60,7 +60,7 @@ const dom = projects.forEach((project) => {
     const link = document.createElement("a");
     link.href = `./intro/${project.name}.html`;
     link.classList.add("btn", "btn-primary");
-    link.textContent = "כניסה";
+    link.innerText = "כניסה";
   
     buttonDiv.appendChild(link);
   
