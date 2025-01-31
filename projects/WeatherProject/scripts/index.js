@@ -12,6 +12,16 @@ button.addEventListener('click', () => {
     }
 });
 
+cityInput.addEventListener("input", (event) => {
+    error.innerText = ""
+    const regex = RegExp("[a-zA-Z]")
+    if(cityInput.value != "") {
+        if(!regex.test(cityInput.value)) {
+            error.innerText = "אתה יכול לרשום רק עיר באנגלית"
+        }
+    }
+})
+
 async function getWeather(city) {
     const apiKey = 'ef41b97a4f6249d8a3c151826242512'; 
     const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${encodeURIComponent(city)}&aqi=no`;
@@ -21,7 +31,7 @@ async function getWeather(city) {
         const data = await response.json();
 
         if (data.error) {
-            error.innerText = "העיר לא נמצאה, אנא נסה שוב";
+            error.innerText = "העיר לא נמצאה, נסה להוסיף את המדינה אחרי העיר";
             weatherInfo.innerHTML = '';
         } else {
             const temperature = data.current.temp_c;
