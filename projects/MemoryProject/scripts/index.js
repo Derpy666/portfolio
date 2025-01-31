@@ -61,6 +61,8 @@ function flipCard() {
         timerInterval = setInterval(updateTimer, 100);
     }
 
+    message.innerText = "..."
+
     card.classList.add("flipped");
     card.innerText = card.getAttribute("data-value");
 
