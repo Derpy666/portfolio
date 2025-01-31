@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>משחק מתמטיקה</title>
     <link rel="stylesheet" href="./styles/style.css" />
-    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/index.js" defer type="module"></script>
   </head>
   <body dir="rtl">
     <div class="container">
@@ -19,19 +19,19 @@
           <option value="normal">רגיל</option>
           <option value="hard">קשה</option>
         </select>
-        <button onclick="startGame()">התחל</button>
+        <button id="startGame">התחל</button>
       </div>
 
       <div id="question-container">
         <h2 id="question-title">שאלה 1 מתוך 10</h2>
         <p id="question" dir="ltr"></p>
         <input type="number" id="answer" placeholder="רשום את התשובה שלך" />
-        <button onclick="submitAnswer()">שאלה הבאה</button>
+        <button id="submitAnswer">שאלה הבאה</button>
       </div>
 
       <div id="end-screen">
         <h2>המשחק נגמר</h2>
-        <p>!הניקוד שלך: <span id="final-score"></span> מתוך 10 נקודות</p>
+        <p>הניקוד שלך: <span id="final-score"></span> מתוך 10 נקודות!</p>
         <p>שיא הניקוד שלך: <span id="final-high-score">0</span></p>
         <table id="score-table">
           <thead>
@@ -44,7 +44,7 @@
           </thead>
           <tbody></tbody>
         </table>
-        <button onclick="restartGame()">שחק שוב</button>
+        <button id="restartGame">שחק שוב</button>
       </div>
     </div>
   </body>

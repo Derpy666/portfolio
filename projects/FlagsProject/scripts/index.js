@@ -1,5 +1,4 @@
-import { countries } from "./countriesService.js";
-import { createCards } from "./domService.js";
+import { countries } from "./services/countries.js";
+import { createCards } from "./services/dom.js";
 
-console.log(countries);
 createCards();
