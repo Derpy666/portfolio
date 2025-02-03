@@ -133,7 +133,7 @@
     .game-container {
       margin: 20px auto;
       padding: 15px;
-      max-width: 90%;
+      max-width: 100%;
     }
   
     h1 {
