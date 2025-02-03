@@ -3,7 +3,6 @@ const cardsContainer = document.getElementById('cards');
 const likedCountries = JSON.parse(localStorage.getItem("likedCountries")) || [];
 
 document.getElementById('search-input').addEventListener('input', (event) => {
-    console.log(event.target.value);
     reset();
     cardsContainer.innerHTML = '';
 
