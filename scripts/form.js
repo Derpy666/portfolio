@@ -21,11 +21,9 @@ function checkRegex(element, regex) {
   if(regex.test(element.value)) {
     element.style.borderColor = "lime"
     element.style.borderWidth = "2px"
-    return true
   } else {
     element.style.borderColor = "red"
     element.style.borderWidth = "2px"
-    return false
   }
 }
 
@@ -34,6 +32,16 @@ formContact.addEventListener("input", function (event) {
 
   if (element.id == "name") checkRegex(element, nameRegex)
   if (element.id == "email") checkRegex(element, emailRegex)
+
+  if(element.id == "message") {
+    if(element.value == "") {
+      element.style.borderColor = "red"
+      element.style.borderWidth = "2px"
+    } else {
+      element.style.borderColor = "lime"
+      element.style.borderWidth = "2px"
+    }
+  }
 
     checkFormValidity()
 })
