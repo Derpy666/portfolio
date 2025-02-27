@@ -119,7 +119,6 @@ button:hover {
   cursor: pointer;
   transition: background-color 0.2s;
   width: 100%;
-  /* Make buttons expand to fill available space */
 }
 
 .letter-button:disabled {
@@ -127,36 +126,31 @@ button:hover {
   cursor: not-allowed;
 }
 
-/* Media queries for mobile responsiveness */
 @media screen and (max-width: 600px) {
+  h1 {
+    font-size: 25px;
+  }
   #letter-keyboard {
     grid-template-columns: repeat(5, 1fr);
-    /* Fewer columns on small screens */
     gap: 8px;
     max-width: 100%;
-    /* Full width for small screens */
   }
 
   .letter-button {
     font-size: 16px;
-    /* Slightly smaller text on mobile */
     padding: 12px;
-    /* Increase button size on smaller screens */
   }
 }
 
 @media screen and (max-width: 400px) {
   #letter-keyboard {
     grid-template-columns: repeat(4, 1fr);
-    /* Even fewer columns on very small screens */
     gap: 6px;
   }
 
   .letter-button {
     font-size: 14px;
-    /* Smaller text size for very small screens */
     padding: 14px;
-    /* Larger buttons for touch targets */
   }
 }
 
