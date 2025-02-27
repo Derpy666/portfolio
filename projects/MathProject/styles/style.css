@@ -104,3 +104,11 @@ tr.incorrect {
   background-color: red;
   color: white;
 }
+
+@media (max-width: 600px) {
+  th,
+td {
+  width: 5px;
+  text-align: right;
+}
+}
